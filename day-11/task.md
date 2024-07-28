@@ -28,7 +28,7 @@
 + Setup Maven Installation in Jenkins
 
 
-![alt text](3.png)
+![alt text](images/3.png)
 ---
 
 + Setup Maven Build Steps COMPILE
