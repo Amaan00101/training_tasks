@@ -111,7 +111,60 @@ pipeline {
 
 #### Basic Playbook Creation:
 
+#### Inventory File:
+
++ Create an inventory file specifying the target server(s) for deployment.
+```yaml
+[webservers]
+172.2x.xx.xx ansible_user=amaan ansible_ssh_pass=xxxx ansible_become_pass=xxxx
+```
+
+
 + Develop an Ansible playbook to automate the deployment of the Docker container.
+```yaml
+---
+- name: Deploying container
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Instaling python pip
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: yes
+
+    - name: Installing Docker SDK
+      pip:
+        name: docker
+        state: present
+
+    - name: Installing Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Making dokcer service running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pulling docker image
+      docker_image:
+        name: amaan00101/myjava-app
+        tag: 9
+        source: pull
+
+    - name: Running docker container
+      docker_container:
+        name: my_test_container
+        image: amaan00101/myjava-app:9
+        state: started
+        restart_policy: always
+        ports:
+          - "8091:80"
+```
 
 
 #### Playbook Tasks:
@@ -122,7 +175,5 @@ pipeline {
 
 + Run the Docker container with the required configurations.
 
+![alt text](<images/Screenshot from 2024-07-29 19-07-20.png>)
 
-#### Inventory File:
-
-+ Create an inventory file specifying the target server(s) for deployment.
