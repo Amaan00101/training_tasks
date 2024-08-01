@@ -259,5 +259,8 @@ if ($conn->connect_error) {
 </body>
 </html>
 ```
+
+![alt text](<images/Screenshot from 2024-08-01 18-53-02.png>)
+
 ![alt text](<images/Screenshot from 2024-08-01 18-53-16.png>)
 ---
