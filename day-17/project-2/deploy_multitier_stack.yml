@@ -1,0 +1,32 @@
+---
+- name: Configure Web Application Server
+  hosts: target03
+  become: yes
+  tasks:
+    - name: Install nginx server
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Ensure Nginx is running and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+
+    - name: Deploy app conf file
+      template:
+        src: app_config.php.j2
+        dest: /var/www/html/app_config.php
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted

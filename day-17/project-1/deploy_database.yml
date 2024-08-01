@@ -1,0 +1,64 @@
+---
+- name: Task-17
+  hosts: target02
+  become: yes
+  vars:
+    new_user: "amaan"
+    new_pass: "password"
+    dbname: new_db
+  tasks:
+  - name: Install MySQL server
+    apt:
+      update_cache: yes
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - mysql-server
+      - mysql-client 
+      - python3-mysqldb 
+      - libmysqlclient-dev
+
+  - name: Copy MySQL configuration file
+    template:
+      src: mysql.cnf.j2
+      dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+    notify: Restart MySQL
+
+  - name: Ensure MySQL service is running and enabled
+    service:
+      name: mysql
+      state: started
+      enabled: yes
+
+  - name: Creating MySQL user
+    mysql_user:
+      name: "{{ new_user }}"
+      password: "{{ new_pass }}"
+      priv: '*.*:ALL'
+      host: '%'
+      state: present
+
+  - name: Create MySQL database
+    mysql_db:
+      name: "{{ dbname }}"
+      state: present
+
+  - name: Copy the script
+    ansible.builtin.copy:
+      src: "backup.sh"
+      dest: "/home/ubuntu/backup.sh"
+      mode: '755'
+
+  - name: Set up cron job for MySQL backup
+    cron:
+      name: "Database backup"
+      minute: "0"
+      hour: "2"
+      job: "/home/ubuntu/backup.sh"
+
+  handlers:
+  - name: Restart MySQL
+    service:
+      name: mysql
+      state: restarted
+
