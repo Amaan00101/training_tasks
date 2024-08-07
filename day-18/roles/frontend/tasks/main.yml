@@ -1,0 +1,26 @@
+---
+# tasks file for roles/frontend
+- name: Instal nginx
+  apt: 
+    name: nginx
+    state: present
+  become: yes
+
+- name: Ensure Nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+  become: yes
+  notify: Restart Nginx
+
+- name: Deploy app file
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+
+- name: Deploy Nginx configuration
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  become: yes

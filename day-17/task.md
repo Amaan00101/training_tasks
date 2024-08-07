@@ -1,4 +1,4 @@
-### Project 01
+## Project 01
 
 ### Deploy a Database Server with Backup Automation
 
@@ -143,7 +143,8 @@ gzip ${BACKUP_FILE}
 ---
 
 
-### Project 02
+
+## Project 02
 
 **Objective**: Automate the setup of a multi-tier web application stack with separate database and application servers using Ansible.
 

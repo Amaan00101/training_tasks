@@ -1,0 +1,6 @@
+---
+- hosts: target02
+  roles:
+    - roles/database
+    - roles/frontend
+    - roles/backend
