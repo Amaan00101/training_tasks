@@ -1,0 +1,43 @@
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7.7G     0  7.7G   0% /dev
+tmpfs           1.6G  2.4M  1.6G   1% /run
+/dev/nvme0n1p1   94G   35G   55G  39% /
+tmpfs           7.8G  102M  7.7G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/loop0      128K  128K     0 100% /snap/bare/5
+/dev/loop2       56M   56M     0 100% /snap/core18/2823
+/dev/loop1      104M  104M     0 100% /snap/core/16928
+/dev/loop3       64M   64M     0 100% /snap/core20/2264
+/dev/loop5       56M   56M     0 100% /snap/core18/2829
+/dev/loop4      105M  105M     0 100% /snap/core/17200
+/dev/loop7      350M  350M     0 100% /snap/gnome-3-38-2004/143
+/dev/loop6       64M   64M     0 100% /snap/core20/2318
+/dev/loop8       39M   39M     0 100% /snap/snapd/21465
+/dev/loop13     165M  165M     0 100% /snap/gnome-3-28-1804/198
+/dev/loop10      55M   55M     0 100% /snap/snap-store/558
+/dev/loop9       39M   39M     0 100% /snap/snapd/21759
+/dev/loop17     249M  249M     0 100% /snap/gnome-3-38-2004/99
+/dev/loop19      42M   42M     0 100% /snap/trivy/276
+/dev/loop16      84M   84M     0 100% /snap/outlook-for-linux/18
+/dev/loop11      50M   50M     0 100% /snap/sonar/117
+/dev/loop15      92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop14     4.3M  4.3M     0 100% /snap/tree/18
+/dev/loop18      13M   13M     0 100% /snap/snap-store/1113
+/dev/loop20      75M   75M     0 100% /snap/core22/1380
+/dev/loop12     506M  506M     0 100% /snap/gnome-42-2204/176
+/dev/loop21      75M   75M     0 100% /snap/core22/1439
+/dev/loop23      66M   66M     0 100% /snap/gtk-common-themes/1519
+/dev/loop22      88M   88M     0 100% /snap/teams-for-linux/645
+/dev/loop24      88M   88M     0 100% /snap/teams-for-linux/649
+/dev/nvme0n1p3  976M   25M  951M   3% /boot/efi
+/dev/nvme0n1p4  359G   31G  310G  10% /home
+tmpfs           1.6G   64K  1.6G   1% /run/user/1000
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:           15Gi       4.9Gi       4.8Gi       787Mi       5.7Gi       9.4Gi
+Swap:          14Gi          0B        14Gi
+CPU Load:
+%Cpu(s):  1.4 us,  2.8 sy,  0.0 ni, 95.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+System metrics collection completed successfully.

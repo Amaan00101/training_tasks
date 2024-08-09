@@ -1,0 +1,6 @@
+logs are shown below :-
+Aug  9 15:46:48 AHMLPT1424 tracker-extract[50496]: Set scheduler policy to SCHED_IDLE
+Aug  9 15:46:48 AHMLPT1424 tracker-extract[50496]: Setting priority nice level to 19
+Aug  9 15:46:48 AHMLPT1424 dbus-daemon[2903]: [session uid=1000 pid=2903] Successfully activated service 'org.freedesktop.Tracker1.Miner.Extract'
+Aug  9 15:46:48 AHMLPT1424 systemd[2887]: Started Tracker metadata extractor.
+
