@@ -60,6 +60,10 @@ You have a scenario where a development team needs access to an S3 bucket contai
 ```
 aws s3 ls s3://application-logs
 ```
+![alt text](<images/Screenshot from 2024-08-13 11-33-51.png>)
+
+![alt text](<images/Screenshot from 2024-08-13 11-32-46.png>)
+---
 
 
 ### Part 2: Estimating a Multi-Tier Architecture Solution
